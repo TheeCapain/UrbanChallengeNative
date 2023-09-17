@@ -4,14 +4,13 @@ import { useState } from 'react';
 
 export default function Home({ navigation }) {
     const [text, onChangeText] = useState('')
+
+
     return (
-
-
         <View style={styles.container}>
             <View>
                 <Text style={styles.headline}>True Dane: The game</Text>
             </View>
-
 
             <View style={styles.input}>
                 <TextInput
@@ -28,11 +27,18 @@ export default function Home({ navigation }) {
             </View>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity onPress={() => {
-                    navigation.navigate('Setup')
+                    navigation.navigate('Create Game')
                 }} >
                     <Text style={styles.buttonText}>Create Game</Text>
                 </TouchableOpacity>
                 <StatusBar style="auto" />
+            </View>
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity onPress={() => {
+                    navigation.navigate('TestScreen')
+                }}>
+                    <Text style={styles.buttonText}>Test Screen</Text>
+                </TouchableOpacity>
             </View>
         </View>
 
