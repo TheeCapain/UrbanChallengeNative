@@ -2,11 +2,16 @@
 import { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button } from 'react-native';
 import Timer from '../Components/timer';
+import { CheckBox } from '@rneui/base';
 
 export default function GameSetup() {
 
     const [password, setPassword] = useState('')
-    const [timer, setTimer] = useState('01:24')
+    const [alcoholChecked, setAlcoholChecked] = useState(true);
+    const toggleAlcoholCheckbox = () => setAlcoholChecked(!alcoholChecked);
+
+    const [moneyChecked, setMoneyChecked] = useState(true);
+    const toggleMoneyCheckbox = () => setMoneyChecked(!moneyChecked);
 
 
     return (
@@ -18,13 +23,32 @@ export default function GameSetup() {
                 <TextInput
                     placeholder='Password'
                     value={password}
+                    onChangeText={setPassword}
                 />
             </View>
-            <View>
-                <Text>Allow Alcohol? BOX HERE</Text>
+            <View >
+                <CheckBox
+                    center
+                    title="Allow Alcohol"
+                    textStyle={{ color: 'white' }}
+                    checked={alcoholChecked}
+                    onPress={() => toggleAlcoholCheckbox()}
+                    containerStyle={styles.CheckBox}
+                    iconRight={true}
+                    checkedColor='red'
+                />
             </View>
-            <View>
-                <Text>Allow Spending money? BOX HERE</Text>
+            <View >
+                <CheckBox
+                    center
+                    title="Allow Money"
+                    textStyle={{ color: 'white' }}
+                    checked={moneyChecked}
+                    onPress={() => toggleMoneyCheckbox()}
+                    containerStyle={styles.CheckBox}
+                    iconRight={true}
+                    checkedColor='red'
+                />
             </View>
 
             <View style={styles.buttonContainer}>
@@ -58,11 +82,17 @@ const styles = StyleSheet.create({
     },
     input: {
         height: 40,
-        width: '50%',
+        width: 203,
         borderWidth: 1,
         borderColor: 'black',
         backgroundColor: 'white',
-    }, buttonContainer: {
+    },
+    CheckBox: {
+        backgroundColor: '#495159',
+        width: 200,
+    },
+
+    buttonContainer: {
         elevation: 8,
         backgroundColor: "#386C0B",
         borderRadius: 5,

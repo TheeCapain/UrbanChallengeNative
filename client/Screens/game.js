@@ -1,14 +1,12 @@
-
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button } from 'react-native';
-import Timer from '../Components/timer';
-import Game from './game'
-export default function Test({ navigation }) {
+import { useState } from 'react';
 
-
+export default function Home({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <Game/>
+            <View><Text>This is the game screen</Text></View>
         </View>
 
     );
@@ -19,5 +17,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#313638',
         alignItems: 'center',
+        justifyContent: 'center',
     },
 });
