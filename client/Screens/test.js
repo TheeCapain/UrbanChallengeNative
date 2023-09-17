@@ -1,14 +1,29 @@
 
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button } from 'react-native';
-import Timer from '../Components/timer';
-import Game from './game'
+
+import { NavigationContainer } from '@react-navigation/native';
+
 export default function Test({ navigation }) {
 
 
 
     return (
         <View style={styles.container}>
-            <Game/>
+            <View style={styles.MenuContainer}>
+                <TouchableOpacity style={styles.menuButtons}>
+                    <Text style={styles.menuText}>Cards</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.menuButtons}>
+                    <Text style={styles.menuText}>Shop</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.menuButtons}>
+                    <Text style={styles.menuText}>Players</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.menuButtons}>
+                    <Text style={styles.menuText}>Options</Text>
+                </TouchableOpacity>
+
+            </View>
         </View>
 
     );
@@ -20,4 +35,26 @@ const styles = StyleSheet.create({
         backgroundColor: '#313638',
         alignItems: 'center',
     },
+    MenuContainer: {
+        flexDirection: 'row',
+        flex: 1,
+        position: 'absolute',
+        bottom: 0,
+        height: 75
+    },
+    menuButtons: {
+        borderColor: 'black',
+        backgroundColor: "#758BFD",
+        paddingVertical: 10,
+        paddingHorizontal: 12,
+        width: '25%',
+        justifyContent: 'center',
+
+    },
+    menuText: {
+        color: 'white',
+        textAlign: 'center',
+
+
+    }
 });

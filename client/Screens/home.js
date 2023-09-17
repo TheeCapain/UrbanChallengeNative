@@ -2,10 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button } from 'react-native';
 import { useState } from 'react';
 
+
 export default function Home({ navigation }) {
     const [text, onChangeText] = useState('')
-
-
     return (
         <View style={styles.container}>
             <View>
@@ -20,7 +19,9 @@ export default function Home({ navigation }) {
                 />
             </View>
             <View style={styles.buttonContainer}>
-                <TouchableOpacity  >
+                <TouchableOpacity onPress={() => {
+                    navigation.navigate('Game')
+                }}>
                     <Text style={styles.buttonText}>Join Game</Text>
                 </TouchableOpacity>
                 <StatusBar style="auto" />

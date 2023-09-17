@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button } from 'rea
 import Timer from '../Components/timer';
 import { CheckBox } from '@rneui/base';
 
-export default function GameSetup() {
+export default function GameSetup({navigation}) {
 
     const [password, setPassword] = useState('')
     const [alcoholChecked, setAlcoholChecked] = useState(true);
@@ -52,8 +52,10 @@ export default function GameSetup() {
             </View>
 
             <View style={styles.buttonContainer}>
-                <TouchableOpacity  >
-                    <Text style={styles.buttonText}>Create Game</Text>
+                <TouchableOpacity onPress={() => {
+                    navigation.navigate('Game')
+                }}>
+                    <Text style={styles.buttonText}>Create game</Text>
                 </TouchableOpacity>
             </View>
         </View>

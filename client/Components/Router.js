@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from '../Screens/home';
 import GameSetup from '../Screens/gameSetup';
 import Test from '../Screens/test';
+import Game from '../Screens/game';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,11 @@ export default Router = () => {
                 />
 
                 <Stack.Screen
+                    name="Game"
+                    component={Game}
+                />
+
+                <Stack.Screen
                     name="TestScreen"
                     component={Test}
                 />
@@ -32,3 +38,4 @@ export default Router = () => {
         </NavigationContainer>
     );
 };
+
