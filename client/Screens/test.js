@@ -1,7 +1,7 @@
 
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button } from 'react-native';
 
-import { NavigationContainer } from '@react-navigation/native';
+import Shop from './shop.js'
 
 export default function Test({ navigation }) {
 
@@ -9,21 +9,7 @@ export default function Test({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <View style={styles.MenuContainer}>
-                <TouchableOpacity style={styles.menuButtons}>
-                    <Text style={styles.menuText}>Cards</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.menuButtons}>
-                    <Text style={styles.menuText}>Shop</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.menuButtons}>
-                    <Text style={styles.menuText}>Players</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.menuButtons}>
-                    <Text style={styles.menuText}>Options</Text>
-                </TouchableOpacity>
-
-            </View>
+            <Shop></Shop>
         </View>
 
     );
@@ -35,26 +21,5 @@ const styles = StyleSheet.create({
         backgroundColor: '#313638',
         alignItems: 'center',
     },
-    MenuContainer: {
-        flexDirection: 'row',
-        flex: 1,
-        position: 'absolute',
-        bottom: 0,
-        height: 75
-    },
-    menuButtons: {
-        borderColor: 'black',
-        backgroundColor: "#758BFD",
-        paddingVertical: 10,
-        paddingHorizontal: 12,
-        width: '25%',
-        justifyContent: 'center',
 
-    },
-    menuText: {
-        color: 'white',
-        textAlign: 'center',
-
-
-    }
 });

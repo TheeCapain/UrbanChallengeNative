@@ -28,7 +28,11 @@ export default Router = () => {
                     name="Game"
                     component={Game}
                 />
-
+                <Stack.Screen
+                    name="Shop"
+                    component={Test}
+                />
+                
                 <Stack.Screen
                     name="TestScreen"
                     component={Test}
