@@ -15,7 +15,6 @@ export default function GameSetup({navigation}) {
 
 
     return (
-
         <View style={styles.container}>
             <Text style={styles.timer}>This is game setup</Text>
             <Timer></Timer>

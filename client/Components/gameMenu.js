@@ -1,15 +1,19 @@
 
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+export default function GameMenu() {
 
-import { NavigationContainer } from '@react-navigation/native';
-
-export default function Test({ navigation }) {
+    const navigation = useNavigation();
     return (
         <View style={styles.MenuContainer}>
-            <TouchableOpacity style={styles.menuButtons}>
+            <TouchableOpacity style={styles.menuButtons} onPress={() => {
+                navigation.navigate('cards')
+            }}>
                 <Text style={styles.menuText}>Cards</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.menuButtons}>
+            <TouchableOpacity style={styles.menuButtons} onPress={() => {
+                navigation.navigate('Shop')
+            }}>
                 <Text style={styles.menuText}>Shop</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuButtons}>

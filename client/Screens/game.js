@@ -6,14 +6,6 @@ import GameMenu from '../Components/gameMenu.js'
 
 
 export default function Game({ navigation }) {
-    const [region, setRegion] = useState({
-        latitude: 51.5079145,
-        longitude: -0.0899163,
-        latitudeDelta: 0.01,
-        longitudeDelta: 0.01,
-    });
-
-
     return (
         <View style={styles.container}>
 
