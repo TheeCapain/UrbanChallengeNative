@@ -27,16 +27,15 @@ export default function Cards({ navigation }) {
         <View style={styles.container}>
             <Text style={styles.cardViewTitle}>Welcome to the Cards</Text>
             <FlatList
-            
                 data={cards}
                 renderItem={({ item }) =>
-                    <View style={styles.cardContent}>
-                        <TouchableOpacity style={styles.cardTitle}>
+                    <TouchableOpacity style={styles.cardTitle}>
+                        <View style={styles.cardContent}>
                             <Text>{item.title}</Text>
                             <Text>{item.description}</Text>
                             <Text>{item.points}</Text>
-                        </TouchableOpacity>
-                    </View>
+                        </View>
+                    </TouchableOpacity>
 
                 }
             />
@@ -56,16 +55,13 @@ const styles = StyleSheet.create({
         fontSize: 25,
         textAlign: "center",
         color: 'white',
-    
+
     },
     cardContent: {
         backgroundColor: 'white',
         margin: 5,
-        height:100,
-        width:350,
-        flexDirection:'column'
+        height: 100,
+        width: 350,
+        flexDirection: 'column'
     }
-  
-
-
 });

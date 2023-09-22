@@ -9,16 +9,18 @@ export default function Shop({ navigation }) {
         <View style={styles.container}>
             <View style={styles.shop} ><Text style={styles.shopTitle}>Welcome to the shop</Text>
                 <TouchableOpacity style={styles.powerUp}>
+                    <FontAwesomeIcon icon={faBoltLightning} />
                     <Text style={styles.itemTitle}>Power Ups - Yellow color</Text>
-                    <FontAwesomeIcon icon={ faBoltLightning } />
+                    <Text style={styles.itemTitle}>Cost: 200 points</Text>
+
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.curses}>
                     <Text style={styles.itemTitle}>Curses - Purple Color</Text>
-                    <FontAwesomeIcon icon={ faSkull } />
+                    <FontAwesomeIcon icon={faSkull} />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.secret}>
                     <Text style={styles.itemTitle}>Shuffle cards or secrets? - Blue?</Text>
-                    <FontAwesomeIcon icon={ faQuestionCircle } />
+                    <FontAwesomeIcon icon={faQuestionCircle} />
                 </TouchableOpacity>
             </View>
         </View >
@@ -28,13 +30,15 @@ export default function Shop({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: "flex-end",
-        alignItems: "center",
+        backgroundColor: '#313638',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     shop: {
         height: '100%',
         width: '100%'
     },
+
     shopTitle: {
         fontSize: 25,
         textAlign: "center",
@@ -42,8 +46,8 @@ const styles = StyleSheet.create({
     },
     powerUp: {
         backgroundColor: '#D6CA98',
-        flexDirection: 'column',
-        height: '25%',
+        flexDirection: 'row',
+        height: '20%',
         borderWidth: 1,
         width: 400,
         margin: 10
@@ -51,7 +55,7 @@ const styles = StyleSheet.create({
     curses: {
         backgroundColor: '#AB92BF',
         flexDirection: 'column',
-        height: '25%',
+        height: '20%',
         borderWidth: 1,
         width: 400,
         margin: 10
@@ -59,7 +63,7 @@ const styles = StyleSheet.create({
     secret: {
         backgroundColor: '#4E6E5D',
         flexDirection: 'column',
-        height: '25%',
+        height: '20%',
         borderWidth: 1,
         width: 400,
         margin: 10
