@@ -6,7 +6,8 @@ import GameSetup from '../Screens/gameSetup';
 import Test from '../Screens/test';
 import Game from '../Screens/game';
 import Shop from '../Screens/shop';
-import Cards from '../Screens/card';
+import Cards from '../Screens/cardsView';
+import Card from '../shared/card';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,13 +36,17 @@ export default Router = () => {
                     component={Shop}
                 />
                 <Stack.Screen
-                    name="cards"
+                    name="cardsOverview"
                     component={Cards}
+                />
+                <Stack.Screen
+                    name="card"
+                    component={Card}
                 />
 
                 <Stack.Screen
                     name="TestScreen"
-                    component={Cards}
+                    component={Test}
                 />
 
             </Stack.Navigator>

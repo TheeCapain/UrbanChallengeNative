@@ -7,7 +7,7 @@ export default function GameMenu() {
     return (
         <View style={styles.MenuContainer}>
             <TouchableOpacity style={styles.menuButtons} onPress={() => {
-                navigation.navigate('cards')
+                navigation.navigate('cardsOverview')
             }}>
                 <Text style={styles.menuText}>Cards</Text>
             </TouchableOpacity>
