@@ -16,7 +16,9 @@ export default function GameMenu() {
             }}>
                 <Text style={styles.menuText}>Shop</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.menuButtons}>
+            <TouchableOpacity style={styles.menuButtons} onPress={() => {
+                navigation.navigate('players')
+            }}>
                 <Text style={styles.menuText}>Players</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuButtons}>

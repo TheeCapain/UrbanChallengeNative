@@ -8,7 +8,7 @@ export default function Cards({ navigation }) {
             title: 'TitleCardOne',
             description: 'CardDescriptionOne',
             points: 100
-        }, cardOne = {
+        }, cardTwo = {
             key: 2,
             title: 'TitleCardTwo',
             description: 'CardDescriptionTwo',
