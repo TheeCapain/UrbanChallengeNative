@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button } from 'react-native';
 import { useState } from 'react'
 import MapView from "react-native-maps";
-import GameMenu from '../Components/gameMenu.js'
+import { Polygon } from 'react-native-maps';
 
 
 
-export default function Game({ navigation }) {
+
+export default function Map({ navigation }) {
     const [region, setRegion] = useState({
         latitude: 51.5079145,
         longitude: -0.0899163,
@@ -14,9 +15,11 @@ export default function Game({ navigation }) {
     });
 
 
+
     return (
         <View style={styles.container}>
             <View><Text>This is the game screen</Text></View>
+
             <MapView
                 style={styles.map}
                 initialRegion={{
@@ -26,7 +29,13 @@ export default function Game({ navigation }) {
                     longitudeDelta: 0.0421,
                 }}
                 onRegionChangeComplete={(region) => setRegion(region)}
-            />
+            >
+
+            </MapView>
+
+            <TouchableOpacity style={styles.overlay}>
+                <Text style={styles.text}>Touchable Opacity</Text>
+            </TouchableOpacity>
         </View >
 
     );
@@ -41,5 +50,9 @@ const styles = StyleSheet.create({
     },
     map: {
         ...StyleSheet.absoluteFillObject,
-    }
+    }, overlay: {
+        position: 'absolute',
+        bottom: 50,
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+    },
 });
