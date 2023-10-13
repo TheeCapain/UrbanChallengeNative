@@ -2,6 +2,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button } from 'react-native';
 
 import Shop from './shop.js'
+import PlayerView from './playerView.js'
 
 export default function Test({ navigation }) {
 
@@ -9,7 +10,7 @@ export default function Test({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <Shop></Shop>
+           <PlayerView/>
         </View>
 
     );

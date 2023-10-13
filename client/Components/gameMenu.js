@@ -7,7 +7,7 @@ export default function GameMenu() {
     return (
         <View style={styles.MenuContainer}>
             <TouchableOpacity style={styles.menuButtons} onPress={() => {
-                navigation.navigate('cards')
+                navigation.navigate('cardsOverview')
             }}>
                 <Text style={styles.menuText}>Cards</Text>
             </TouchableOpacity>
@@ -16,7 +16,9 @@ export default function GameMenu() {
             }}>
                 <Text style={styles.menuText}>Shop</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.menuButtons}>
+            <TouchableOpacity style={styles.menuButtons} onPress={() => {
+                navigation.navigate('players')
+            }}>
                 <Text style={styles.menuText}>Players</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.menuButtons}>

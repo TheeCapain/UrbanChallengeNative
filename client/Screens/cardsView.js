@@ -2,23 +2,22 @@ import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native
 import { useState } from 'react';
 
 export default function Cards({ navigation }) {
-
     const [cards, setCards] = useState([
         cardOne = {
             key: 1,
             title: 'TitleCardOne',
             description: 'CardDescriptionOne',
-            points: 200
-        }, cardOne = {
+            points: 100
+        }, cardTwo = {
             key: 2,
             title: 'TitleCardTwo',
             description: 'CardDescriptionTwo',
             points: 200
         }, cardOne = {
             key: 3,
-            title: 'TitleCardOne',
+            title: 'TitleCardThree',
             description: 'CardDescriptionThree',
-            points: 200
+            points: 300
         },
     ])
 
@@ -29,14 +28,11 @@ export default function Cards({ navigation }) {
             <FlatList
                 data={cards}
                 renderItem={({ item }) =>
-                    <TouchableOpacity style={styles.cardTitle}>
-                        <View style={styles.cardContent}>
-                            <Text>{item.title}</Text>
-                            <Text>{item.description}</Text>
-                            <Text>{item.points}</Text>
-                        </View>
+                    <TouchableOpacity style={styles.cardContent} onPress={() => navigation.navigate('card', { card: item })}>
+                        <Text>{item.title}</Text>
+                        <Text>{item.description}</Text>
+                        <Text>{item.points}</Text>
                     </TouchableOpacity>
-
                 }
             />
         </View>
@@ -55,13 +51,22 @@ const styles = StyleSheet.create({
         fontSize: 25,
         textAlign: "center",
         color: 'white',
-
     },
     cardContent: {
         backgroundColor: 'white',
         margin: 5,
         height: 100,
         width: 350,
-        flexDirection: 'column'
+        flexDirection: 'column',
+        borderRadius: 6,
+        elevation: 3,
+        backgroundColor: '#fff',
+        shadowOffset: { width: 1, height: 1 },
+        shadowColor: '#333',
+        shadowOpacity: 0.3,
+        shadowRadius: 2,
+        marginHorizontal: 4,
+        marginVertical: 6,
+    
     }
 });
