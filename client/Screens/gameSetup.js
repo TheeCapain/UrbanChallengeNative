@@ -52,9 +52,7 @@ export default function GameSetup({ navigation }) {
 
             <View style={styles.buttonContainer}>
                 <TouchableOpacity onPress={() => {
-                
                     navigation.replace('Game')
-
                 }}>
                     <Text style={styles.buttonText}>Create game</Text>
                 </TouchableOpacity>

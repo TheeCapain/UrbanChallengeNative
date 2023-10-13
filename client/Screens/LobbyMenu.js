@@ -1,49 +1,52 @@
-import { StyleSheet, Text, View, FlatList, TouchableOpacity, Button } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button } from 'react-native';
 import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
-export default function LobbyMenu({ navigation }) {
+
+export default function LobbyMenu() {
+    const navigation = useNavigation();
+    const [text, onChangeText] = useState('')
     return (
-        <View >
-            <Text>Game ID: #######</Text>
+        <View style={styles.LobbyMenu}>
+
             <View style={styles.buttonContainer}>
                 <TouchableOpacity onPress={() => {
-                    navigation.navigate('TestScreen')
-                }}>
-                    <Text style={styles.buttonText}>Scoreboard</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.buttonContainer}>
-                <TouchableOpacity onPress={() => {
-                    navigation.navigate('TestScreen')
+                    navigation.navigate('cardsOverview')
                 }}>
                     <Text style={styles.buttonText}>Cards</Text>
                 </TouchableOpacity>
+                <StatusBar style="auto" />
             </View>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity onPress={() => {
-                    navigation.navigate('TestScreen')
+                    navigation.navigate('playerView')
+                }} >
+                    <Text style={styles.buttonText}>Scoreboard</Text>
+                </TouchableOpacity>
+                <StatusBar style="auto" />
+            </View>
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity onPress={() => {
+                    navigation.navigate('Shop')
                 }}>
                     <Text style={styles.buttonText}>Shop</Text>
                 </TouchableOpacity>
             </View>
-            <View style={styles.buttonContainer}>
-                <TouchableOpacity onPress={() => {
-                    navigation.navigate('TestScreen')
-                }}>
-                    <Text style={styles.buttonText}>misc</Text>
-                </TouchableOpacity>
-            </View>
+
+
         </View>
 
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
+    LobbyMenu: {
+        height: "100%",
         backgroundColor: '#313638',
         alignItems: 'center',
         justifyContent: 'center',
+
     },
     headline: {
         fontWeight: 'bold',

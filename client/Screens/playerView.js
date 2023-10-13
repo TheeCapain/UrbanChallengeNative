@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 
-export default function Cards({ navigation }) {
+export default function PlayerView({ navigation }) {
     const [teams, setTeams] = useState([
         teamOne = {
             key: 1,

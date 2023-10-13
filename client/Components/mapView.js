@@ -13,11 +13,6 @@ export default function Map({ navigation }) {
         latitudeDelta: 0.01,
         longitudeDelta: 0.01,
     });
-
-    
-
-
-
     return (
         <View style={styles.container}>
             <View><Text>This is the game screen</Text></View>

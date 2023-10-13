@@ -2,7 +2,6 @@
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 export default function GameMenu() {
-
     const navigation = useNavigation();
     return (
         <View style={styles.MenuContainer}>

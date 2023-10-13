@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button } from 'rea
 
 import Shop from './shop.js'
 import PlayerView from './playerView.js'
+import CardsView from './cardsView.js'
 
 export default function Test({ navigation }) {
 
@@ -10,7 +11,7 @@ export default function Test({ navigation }) {
 
     return (
         <View style={styles.container}>
-           <PlayerView/>
+        <CardsView></CardsView>
         </View>
 
     );

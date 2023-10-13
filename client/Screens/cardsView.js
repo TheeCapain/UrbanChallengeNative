@@ -1,7 +1,9 @@
 import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
-export default function Cards({ navigation }) {
+export default function Cards() {
+    const navigation = useNavigation();
     const [cards, setCards] = useState([
         cardOne = {
             key: 1,
@@ -20,8 +22,6 @@ export default function Cards({ navigation }) {
             points: 300
         },
     ])
-
-
     return (
         <View style={styles.container}>
             <Text style={styles.cardViewTitle}>Welcome to the Cards</Text>
@@ -67,6 +67,6 @@ const styles = StyleSheet.create({
         shadowRadius: 2,
         marginHorizontal: 4,
         marginVertical: 6,
-    
+
     }
 });

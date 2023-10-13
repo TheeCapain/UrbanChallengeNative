@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { Button } from '@rneui/base'
 
-export default function Card({ route, navigation }) {
+export default function Card({ route }) {
 
     return (
         <View style={styles.container}>
@@ -12,8 +12,6 @@ export default function Card({ route, navigation }) {
                     <Text>{route.params.card.description}</Text>
                     <Text>{route.params.card.points}</Text>
                     <Text>Time limit: 10 minutes</Text>
-
-
                 </View>
 
             </View>
