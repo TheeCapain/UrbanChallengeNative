@@ -11,15 +11,17 @@ export default function Shop({ navigation }) {
                 <TouchableOpacity style={styles.powerUp}>
                     <FontAwesomeIcon icon={faBoltLightning} />
                     <Text style={styles.itemTitle}>Power Ups - Yellow color</Text>
-                    <Text style={styles.itemTitle}>Cost: 200 points</Text>
+                    <Text style={styles.itemTitle}>Cost: 1000 points</Text>
 
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.curses}>
                     <Text style={styles.itemTitle}>Curses - Purple Color</Text>
+                    <Text style={styles.itemTitle}>Cost: 1000 points</Text>
                     <FontAwesomeIcon icon={faSkull} />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.secret}>
                     <Text style={styles.itemTitle}>Shuffle cards or secrets? - Blue?</Text>
+                    <Text style={styles.itemTitle}>Cost: 1000 points</Text>
                     <FontAwesomeIcon icon={faQuestionCircle} />
                 </TouchableOpacity>
             </View>
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
         margin: 10
     },
     secret: {
-        backgroundColor: '#4E6E5D',
+        backgroundColor: 'white',
         flexDirection: 'column',
         height: '20%',
         borderWidth: 1,

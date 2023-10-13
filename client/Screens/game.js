@@ -2,28 +2,22 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button } from 'rea
 import { useState } from 'react'
 import MapView from '../Components/mapView.js'
 import GameMenu from '../Components/gameMenu.js'
+import Lobby from '../Screens/lobby'
+import LobbyMenu from '../Screens/LobbyMenu.js'
 
 
 
 export default function Game({ navigation }) {
     return (
-        <View style={styles.container}>
 
-            <View><Text>This is the game screen</Text></View>
-            <MapView />
+        <View>
+            <LobbyMenu />
+        </View>
 
-            <GameMenu />
-
-        </View >
 
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "flex-end",
-        alignItems: "center",
-    },
 
 });

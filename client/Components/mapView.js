@@ -13,6 +13,8 @@ export default function Game({ navigation }) {
         longitudeDelta: 0.01,
     });
 
+    
+
 
     return (
         <View style={styles.container}>

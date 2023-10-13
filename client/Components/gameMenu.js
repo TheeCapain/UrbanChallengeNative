@@ -28,26 +28,5 @@ export default function GameMenu() {
 
 const styles = StyleSheet.create({
 
-    MenuContainer: {
-        flexDirection: 'row',
-        flex: 1,
-        position: 'absolute',
-        bottom: 0,
-        height: 75
-    },
-    menuButtons: {
-        borderColor: 'black',
-        backgroundColor: "#758BFD",
-        paddingVertical: 10,
-        paddingHorizontal: 12,
-        width: '25%',
-        justifyContent: 'center',
 
-    },
-    menuText: {
-        color: 'white',
-        textAlign: 'center',
-
-
-    }
 });
