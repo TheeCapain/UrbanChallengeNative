@@ -3,6 +3,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import { Button } from '@rneui/base'
 
 export default function Card({ route }) {
+    console.log(route);
 
     return (
         <View style={styles.container}>

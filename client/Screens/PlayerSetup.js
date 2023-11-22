@@ -4,36 +4,31 @@ import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 
-export default function LobbyMenu() {
+export default function PlayerSetup() {
     const navigation = useNavigation();
-    const [text, onChangeText] = useState('')
+    const [name, onChangeName] = useState('')
     return (
         <View style={styles.LobbyMenu}>
+            <View>
+                <Text style={styles.headline}>Enter your name</Text>
+            </View>
+            <View style={styles.input}>
+      
+                <TextInput
+                    placeholder='Enter player name'
+                    onChangeText={onChangeName}
+                    value={name}
+                />
+            </View>
 
             <View style={styles.buttonContainer}>
                 <TouchableOpacity onPress={() => {
-                    navigation.navigate('cardsOverview')
+                    navigation.replace('Game', { player: name })
                 }}>
-                    <Text style={styles.buttonText}>Cards</Text>
+                    <Text style={styles.buttonText}>Join Game</Text>
                 </TouchableOpacity>
                 <StatusBar style="auto" />
             </View>
-            <View style={styles.buttonContainer}>
-                <TouchableOpacity onPress={() => {
-                    navigation.navigate('playerView')
-                }} >
-                    <Text style={styles.buttonText}>Scoreboard</Text>
-                </TouchableOpacity>
-                <StatusBar style="auto" />
-            </View>
-            <View style={styles.buttonContainer}>
-                <TouchableOpacity onPress={() => {
-                    navigation.navigate('Shop')
-                }}>
-                    <Text style={styles.buttonText}>Shop</Text>
-                </TouchableOpacity>
-            </View>
-
 
         </View>
 

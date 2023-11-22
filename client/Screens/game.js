@@ -1,15 +1,15 @@
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button } from 'react-native';
 import { useState } from 'react'
-import LobbyMenu from '../Screens/LobbyMenu'
+import GameMenu from '../Components/gameMenu'
 
 
 
-export default function Game({ navigation }) {
+export default function Game({ navigation, route }) {
     return (
 
 
         <View>
-            <LobbyMenu />
+            <GameMenu playerName={route.params.player}/>
         </View>
 
 
