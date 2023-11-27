@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { createClient } from '@supabase/supabase-js'
 
 export default function Cards() {
     const navigation = useNavigation();
