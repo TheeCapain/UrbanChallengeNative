@@ -1,28 +1,15 @@
 import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { createClient } from '@supabase/supabase-js'
 
-export default function Cards() {
+
+export default function CardsOverview(props) {
+
+
     const navigation = useNavigation();
-    const [cards, setCards] = useState([
-        cardOne = {
-            key: 1,
-            title: 'TitleCardOne',
-            description: 'CardDescriptionOne',
-            points: 100
-        }, cardTwo = {
-            key: 2,
-            title: 'TitleCardTwo',
-            description: 'CardDescriptionTwo',
-            points: 200
-        }, cardOne = {
-            key: 3,
-            title: 'TitleCardThree',
-            description: 'CardDescriptionThree',
-            points: 300
-        },
-    ])
+    const [cards, setCards] = useState(props.route.params.cards)
+
+    console.log(cards);
     return (
         <View style={styles.container}>
             <Text style={styles.cardViewTitle}>Welcome to the Cards</Text>
@@ -30,9 +17,9 @@ export default function Cards() {
                 data={cards}
                 renderItem={({ item }) =>
                     <TouchableOpacity style={styles.cardContent} onPress={() => navigation.navigate('card', { card: item })}>
-                        <Text>{item.title}</Text>
-                        <Text>{item.description}</Text>
-                        <Text>{item.points}</Text>
+                        <Text>{item.challenge_title}</Text>
+                        <Text>{item.challenge_description}</Text>
+                        <Text>{item.challenge_points}</Text>
                     </TouchableOpacity>
                 }
             />

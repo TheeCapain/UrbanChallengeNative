@@ -9,9 +9,9 @@ export default function Card({ route }) {
         <View style={styles.container}>
             <View style={styles.card}>
                 <View style={styles.cardContent}>
-                    <Text>{route.params.card.title}</Text>
-                    <Text>{route.params.card.description}</Text>
-                    <Text>{route.params.card.points}</Text>
+                    <Text>{route.params.card.challenge_title}</Text>
+                    <Text>{route.params.card.challenge_description}</Text>
+                    <Text>{route.params.card.challenge_points}</Text>
                     <Text>Time limit: 10 minutes</Text>
                 </View>
 

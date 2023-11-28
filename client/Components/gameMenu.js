@@ -1,13 +1,37 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button } from 'react-native';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
+import {SUPABASE_KEY} from '@env'
 
+import { createClient } from '@supabase/supabase-js'
+import 'react-native-url-polyfill/auto';
+const supabaseUrl = 'https://rkpqeyftddejgboqvwhh.supabase.co'
+const supabaseKey = SUPABASE_KEY
+const supabase = createClient(supabaseUrl, supabaseKey)
 
 export default function LobbyMenu(props) {
     const navigation = useNavigation();
 
     const [points, onChangePoints] = useState(0)
+
+    const [challenges, setChallenges] = useState()
+
+    useEffect(() => {
+        if (!challenges) {
+            getChallenges()
+        }
+        async function getChallenges() {
+            let { data: challenges, error } = await supabase
+                .from('challenges')
+                .select('*')
+            setChallenges(challenges)
+        }
+
+
+
+    })
+
     return (
         <View style={styles.LobbyMenu}>
             <Text style={styles.headline}>Player Name here:{props.playerName}  </Text>
@@ -16,7 +40,7 @@ export default function LobbyMenu(props) {
             <Text style={styles.headline}>Timer here if any</Text>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity onPress={() => {
-                    navigation.navigate('cardsOverview')
+                    navigation.navigate('cardsOverview',{cards: challenges})
                 }}>
                     <Text style={styles.buttonText}>Cards</Text>
                 </TouchableOpacity>
