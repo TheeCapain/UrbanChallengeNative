@@ -2,11 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button } from 'react-native';
 import { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import {SUPABASE_KEY} from '@env'
+import {SUPABASE_KEY,SUPABASE_URL} from '@env'
 
 import { createClient } from '@supabase/supabase-js'
 import 'react-native-url-polyfill/auto';
-const supabaseUrl = 'https://rkpqeyftddejgboqvwhh.supabase.co'
+const supabaseUrl = SUPABASE_URL
 const supabaseKey = SUPABASE_KEY
 const supabase = createClient(supabaseUrl, supabaseKey)
 
